@@ -53,3 +53,6 @@ are separated by commas:
 `name=` fills in the page's player name field (at most 29 characters) and
 skips the first-visit name prompt; the player can still edit it. It is not
 passed to the game itself.
+
+Editing the name field updates `name=` in the address bar, so the URL can be
+bookmarked or shared.
