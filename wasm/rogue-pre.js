@@ -20,7 +20,8 @@ Module["preRun"].push(function () {
     ENV.HOME = "/data";
     // Suggest a name in the save prompt (the "file name?" default is empty).
     // Extra options come from the page URL (?ROGUEOPTS=qwertz).
-    ENV.ROGUEOPTS = ("file=rogue.save " + (Module["rogueOpts"] || "")).trim();
+    // Rogue separates options with commas (a value runs up to the next comma).
+    ENV.ROGUEOPTS = "file=rogue.save," + (Module["rogueOpts"] || "");
     // Rogue's curses reads the termcap file named by $TERMCAP (max 40
     // characters) before falling back to /etc/termcap.
     ENV.TERMCAP = "/rogue.termcap";
