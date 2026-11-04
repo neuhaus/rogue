@@ -43,11 +43,13 @@ TERMCAP=wasm/rogue.termcap TERM=xterm ./build/native/rogue
 
 ## Game options in the browser
 
-Rogue's `ROGUEOPTS` options can be set with a URL parameter of the same
-name. Options are separated by commas:
+Rogue's `ROGUEOPTS` options can be set in the URL hash, using the same name.
+The hash is not sent to the server, so it stays out of server logs. Options
+are separated by commas:
 
-    https://neuhaus.github.io/rogue/?ROGUEOPTS=qwertz
-    https://neuhaus.github.io/rogue/?ROGUEOPTS=qwertz,nojump,name=Bob
+    https://neuhaus.github.io/rogue/#ROGUEOPTS=qwertz
+    https://neuhaus.github.io/rogue/#ROGUEOPTS=qwertz,nojump,name=Bob
 
-`name=` sets the name shown in the greeting and the high-score table
-(at most 30 characters) and takes precedence over the page's name field.
+`name=` fills in the page's player name field (at most 29 characters) and
+skips the first-visit name prompt; the player can still edit it. It is not
+passed to the game itself.
