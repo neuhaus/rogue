@@ -40,3 +40,11 @@ cmake -S . -B build/native
 cmake --build build/native
 TERMCAP=wasm/rogue.termcap TERM=xterm ./build/native/rogue
 ```
+
+## Game options in the browser
+
+Rogue's `ROGUEOPTS` options can be set with a URL parameter of the same
+name. Options are separated by `+` or a space:
+
+    https://neuhaus.github.io/rogue/?ROGUEOPTS=qwertz
+    https://neuhaus.github.io/rogue/?ROGUEOPTS=qwertz+nojump
